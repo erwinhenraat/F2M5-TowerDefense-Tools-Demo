@@ -5,13 +5,44 @@
     position : relative;
     
 }
-
+#selectorHolder{
+    background-color: cornsilk;
+    width: 500px;
+    height: 100px;
+    position: relative;
+}
 .tile {
-    background-color: blue;
-    
+    background-color: grey;    
     position: absolute;
     border-style:dashed;
     border-color: black;
-    
- 
+}
+
+.selector{
+    position: absolute;
+    border-style: dashed;
+    border-color: black;
+    border-width: 0px;
+    width: 80px;
+    height: 80px;
+    top: 10px;
+}
+
+#spawnpoint {
+    background-color: red;
+}
+#path {
+    background-color: yellow;   
+}
+#waypoint {
+    background-color: blue;
+}
+#buildable {
+    background-color: green;
+}
+#default {
+    background-color: grey;
+}
+#deselect {
+    background-color: tomato;
 }
