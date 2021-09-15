@@ -2,8 +2,7 @@
     background-color: burlywood;
     width: 500px;
     height: 500px;
-    position : relative;
-    
+    position : relative;    
 }
 #selectorHolder{
     background-color: cornsilk;
@@ -17,32 +16,28 @@
     border-style:dashed;
     border-color: black;
 }
-
+.spawnpoint{
+    background-color: rgb(223, 12, 12);
+}
 .selector{
     position: absolute;
     border-style: dashed;
     border-color: black;
-    border-width: 0px;
-    width: 80px;
-    height: 80px;
+    border-width: 0px;   
     top: 10px;
 }
-
-#spawnpoint {
-    background-color: red;
-}
-#path {
+.path {
     background-color: yellow;   
 }
-#waypoint {
+.waypoint {
     background-color: blue;
 }
-#buildable {
+.buildable {
     background-color: green;
 }
-#default {
+.default {
     background-color: grey;
 }
-#deselect {
+.deselect {
     background-color: tomato;
 }
