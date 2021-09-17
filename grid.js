@@ -1,9 +1,15 @@
 let button = document.getElementById("submit");
+let savebtn = document.getElementById("save");
 let gridHolder = document.getElementById("grid");
 let selectorHolder = document.getElementById("selectorHolder");
 let tileSize = 25;
 let borderSize = 2;
 let activeSelector = 'default';
+
+savebtn.addEventListener("click", ()=>{
+    saveGrid();
+});
+
 button.addEventListener("click", ()=>{
     clearGrid();
     buildGrid(getGridDimensions());    
@@ -15,6 +21,42 @@ addTileSelector('buildable');
 addTileSelector('default');
 clickGridTiles();
 clickSelectors();
+
+function saveGrid(){
+    console.log("save grid data");
+    let tileData = [];
+    for(let i = 0; i < gridHolder.children.length; i++){      
+        let color = gridHolder.children[i].style.backgroundColor;
+        let type = getKeyByValue(colorDict, color);
+
+
+        /*
+        switch(color){
+            case "red":
+            type = "spawnpoint";
+            break;
+            case "yellow":
+            type = "path";
+            break;
+            case "blue":
+            type = "waypoint";
+            break;
+            case "green":
+            type = "buildable";
+            break;
+            case "grey":
+            type = "default";
+            break;
+        }
+*/
+        tileData.push(type);
+        
+
+    }
+    console.log(tileData);
+
+
+}
 
 function clickSelectors(){
     if(selectorHolder.children.length > 0){
@@ -51,6 +93,7 @@ function buildGrid(dimensions){
         tile.style.borderWidth = borderSize+"px";        
         tile.style.left = (i % dimensions.w) * (tileSize + borderSize) + "px";
         tile.style.top = Math.floor(i / dimensions.w) * (tileSize + borderSize)+ "px";               
+        tile.style.backgroundColor = "grey";
         gridHolder.appendChild(tile);
     }
 }
@@ -72,6 +115,10 @@ function clickGridTiles(){
             e.target.style.backgroundColor = colorDict[activeSelector];
         }           
     });
+}
+
+function getKeyByValue(object, value) {
+    return Object.keys(object).find(key => object[key] === value);
 }
 
 
