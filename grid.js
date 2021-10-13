@@ -28,29 +28,8 @@ function saveGrid(){
     for(let i = 0; i < gridHolder.children.length; i++){      
         let color = gridHolder.children[i].style.backgroundColor;
         let type = getKeyByValue(colorDict, color);
-
-
-        /*
-        switch(color){
-            case "red":
-            type = "spawnpoint";
-            break;
-            case "yellow":
-            type = "path";
-            break;
-            case "blue":
-            type = "waypoint";
-            break;
-            case "green":
-            type = "buildable";
-            break;
-            case "grey":
-            type = "default";
-            break;
-        }
-*/
-        tileData.push(type);
         
+        tileData.push(type);
 
     }
     console.log(tileData);
